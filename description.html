@@ -1,0 +1,524 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Header,0:HeaderFooterSprite,0:Header.NonMtps;/Areas/Centers/Themes/StandardDevCenter/Content:0&amp;amp;v=46D0EADCABBE3E18DF970254C2C182AB" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Footer,0:HeaderFooterSprite,0:Footer.NonMtps,1:NewFooterSock,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;v=D4D084DF03A9CB234D78334671AC996E" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Joystick Control for UWP Apps</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="https://i1.code.msdn.s-msft.com/content/common/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="https://i1.code.msdn.s-msft.com/content/common/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Joystick Control for UWP Apps</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            UserControl, Windows 10, UWP
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            UserControls, Custom Events, Dependency Properties
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop, Phone
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">11/9/2016</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MIT</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="https://code.msdn.microsoft.com/Joystick-Control-for-UWP-ad957149">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h1>Introduction</h1>
+<p>This is a simple project that demonstrates how to use a Joystick control in UWP apps as well as some insight into it&rsquo;s working. Here&rsquo;s a sample preview of the control we&rsquo;re talking about.</p>
+<p><img alt=""><img alt=""><img alt=""><img id="163262" src="https://i1.code.msdn.s-msft.com/joystick-control-for-uwp-ad957149/image/file/163262/1/screenshot%20(48).png" alt="" width="185" height="185"><img id="163264" src="https://i1.code.msdn.s-msft.com/joystick-control-for-uwp-ad957149/image/file/163264/1/screenshot%20(49).png" alt="" width="189" height="189"><img id="163270" src="https://i1.code.msdn.s-msft.com/joystick-control-for-uwp-ad957149/image/file/163270/1/ezgif-4033767613.gif" alt="" width="184" height="184"></p>
+<p><img id="163327" src="https://i1.code.msdn.s-msft.com/joystick-control-for-uwp-ad957149/image/file/163327/1/ezgif-306152104.gif" alt="" width="231" height="171"><img id="163331" src="https://i1.code.msdn.s-msft.com/joystick-control-for-uwp-ad957149/image/file/163331/1/giphy.gif" alt="" width="331" height="152"></p>
+<h1><strong>Pre-Requisites</strong></h1>
+<p>To build this project, you need Visual Studio 2015 with UWP SDK installed on your machine i.e. Check the
+<strong>Universal Windows App Development Tools </strong>option when installing<strong>
+</strong>Visual Studio.</p>
+<p>If you have Visual Studio already installed, then just run the setup and check
+<strong>Universal Windows App Development Tools </strong>option. It will only install the required components.</p>
+<p>&nbsp;</p>
+<h1><strong>See it in Action</strong></h1>
+<p>1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Download and extract the .zip file.</p>
+<p>2)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Open the .sln file in Visual Studio.</p>
+<p>3)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Run the application</p>
+<p>Building the project automatically restores any required packages but if it doesn&rsquo;t then you can restore it manually, right click on the solution in solution explorer then click
+<strong>Restore NuGet Packages</strong>.</p>
+<p>&nbsp;</p>
+<h1><strong>Use it in Your Own App</strong></h1>
+<p><strong><br>
+</strong></p>
+<h2><strong>Step 1: Add JoystickUserControl</strong></h2>
+<h3><strong>Method 1: Copy UserControl Code</strong></h3>
+<p>You should use method to learn about the working of Joystick UserControl or if you want to modify and optimize the control according to your need.</p>
+<p>&nbsp; - Drag and drop the three files from the folder JoystickUserControl (namely Joystick.xaml, Joystick.xaml.cs and JoystickEventArgs.cs) into your UWP project inside Visual Studio.</p>
+<h3><strong>Method 2: Installing Nuget Package</strong></h3>
+<p>A cleaner way to get Joystick control in your app is through <a href="https://code.msdn.microsoft.com/Joystick-Control-for-UWP-ad957149/https://www.nuget.org/packages/JoystickUserControl/">
+NuGet.</a></p>
+<p>&nbsp; - Go to NuGet Package Manager Console and enter the following command</p>
+<p><span style="color:#ff0000">Install-package JoystickUserControl</span></p>
+<p>Then build the project.</p>
+<p>&nbsp;</p>
+<h2><strong>Step 2: Add Namespace</strong><strong>&nbsp;</strong></h2>
+<p>Add the <span style="color:#ff0000">xmlns</span><span style="color:#0000ff">:</span><span style="color:#ff0000">JoystickControl</span><span style="color:#0000ff">=&quot;using:JoystickUserControl&quot;</span>
+<span style="background-color:#ffff00">&nbsp;</span>namespace to your mainpage.xaml or whatever page you want to add joystick to.</p>
+<p>&nbsp;</p>
+<h2><strong>Step 3: Add the Joystick control to your page.</strong></h2>
+<p>Add Joystick control using the following statement,<strong><br>
+</strong></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>XAML</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">xaml</span>
+<pre class="hidden">&lt;JoystickControl:Joystick x:Name=&rdquo;MyJoystick&rdquo;&gt;&lt; /JoystickControl:Joystick&gt;</pre>
+<div class="preview">
+<pre class="xaml"><span class="xaml__tag_start">&lt;JoystickControl</span>:Joystick&nbsp;x:Name=&rdquo;MyJoystick&rdquo;<span class="xaml__tag_start">&gt;</span>&lt;&nbsp;/JoystickControl:Joystick&gt;</pre>
+</div>
+</div>
+</div>
+<p>It will create a Joystick with default values and theme.</p>
+<p>Now your code should look something like this,</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>XAML</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">xaml</span>
+<pre class="hidden">&lt;Page
+    x:Class=&quot;JoystickControlSample.MainPage&quot;
+    xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+    xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+    xmlns:local=&quot;using:JoystickControlSample&quot;
+    xmlns:d=&quot;http://schemas.microsoft.com/expression/blend/2008&quot;
+    xmlns:mc=&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot;
+    mc:Ignorable=&quot;d&quot;
+    xmlns:JoystickControl=&quot;using:JoystickUserControl&quot;&gt;
+
+    &lt;Grid Background=&quot;{ThemeResource ApplicationPageBackgroundThemeBrush}&quot;&gt;
+        &lt;JoystickControl:Joystick x:Name=&quot;Joystick&quot;&gt;&lt;/JoystickControl:Joystick&gt;
+    &lt;/Grid&gt;
+&lt;/Page&gt;</pre>
+<div class="preview">
+<pre class="xaml"><span class="xaml__tag_start">&lt;Page</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;x:<span class="xaml__attr_name">Class</span>=<span class="xaml__attr_value">&quot;JoystickControlSample.MainPage&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="xaml__attr_name">xmlns</span>=<span class="xaml__attr_value">&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="xaml__keyword">xmlns</span>:<span class="xaml__attr_name">x</span>=<span class="xaml__attr_value">&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="xaml__keyword">xmlns</span>:<span class="xaml__attr_name">local</span>=<span class="xaml__attr_value">&quot;using:JoystickControlSample&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="xaml__keyword">xmlns</span>:<span class="xaml__attr_name">d</span>=<span class="xaml__attr_value">&quot;http://schemas.microsoft.com/expression/blend/2008&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="xaml__keyword">xmlns</span>:<span class="xaml__attr_name">mc</span>=<span class="xaml__attr_value">&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;mc:<span class="xaml__attr_name">Ignorable</span>=<span class="xaml__attr_value">&quot;d&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="xaml__keyword">xmlns</span>:<span class="xaml__attr_name">JoystickControl</span>=<span class="xaml__attr_value">&quot;using:JoystickUserControl&quot;</span><span class="xaml__tag_start">&gt;&nbsp;
+</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="xaml__tag_start">&lt;Grid</span>&nbsp;<span class="xaml__attr_name">Background</span>=<span class="xaml__attr_value">&quot;{ThemeResource&nbsp;ApplicationPageBackgroundThemeBrush}&quot;</span><span class="xaml__tag_start">&gt;&nbsp;
+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="xaml__tag_start">&lt;JoystickControl</span>:Joystick&nbsp;x:<span class="xaml__attr_name">Name</span>=<span class="xaml__attr_value">&quot;Joystick&quot;</span><span class="xaml__tag_start">&gt;</span><span class="xaml__tag_end">&lt;/JoystickControl:Joystick&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="xaml__tag_end">&lt;/Grid&gt;</span>&nbsp;
+<span class="xaml__tag_end">&lt;/Page&gt;</span></pre>
+</div>
+</div>
+</div>
+<h2><strong>Step 4: Customize Joystick Control</strong></h2>
+<p>You can change a lot of properties but let&rsquo;s just run the app to see how our Joystick looks like with default settings.</p>
+<h3><strong>Properties</strong></h3>
+<table border="1" cellspacing="0" cellpadding="0" width="610" height="562">
+<tbody>
+<tr>
+<td width="154" valign="top">
+<p><strong>Name</strong></p>
+</td>
+<td width="470" valign="top">
+<p><strong>Description</strong></p>
+</td>
+</tr>
+<tr>
+<td width="154" valign="top">
+<p>InnerDiameter</p>
+</td>
+<td width="470" valign="top">
+<p>Sets the diameter of inner circle.</p>
+<p><strong>Default: </strong>60px</p>
+</td>
+</tr>
+<tr>
+<td width="154" valign="top">
+<p>InnerFill</p>
+</td>
+<td width="470" valign="top">
+<p>Color of inner circle. It overrides theme style. It overrides the respective color set by theme. You can use it to tweak theme style.</p>
+</td>
+</tr>
+<tr>
+<td width="144" valign="top">
+<p>InnerStroke</p>
+</td>
+<td width="480" valign="top">
+<p>Border color of inner circle. It overrides the respective color set by theme. You can use it to tweak theme style.</p>
+</td>
+</tr>
+<tr>
+<td width="144" valign="top">
+<p>InnerStrokeDashArray</p>
+</td>
+<td width="480" valign="top">
+<p>This property sets the length of stroke and gaps to create dash pattern of inner circle.</p>
+</td>
+</tr>
+<tr>
+<td width="144" valign="top">
+<p>InnerStrokeDashCap</p>
+</td>
+<td width="480" valign="top">
+<p>This property sets the shape of dash edges of inner circle. Default is Flat.</p>
+</td>
+</tr>
+<tr>
+<td width="144" valign="top">
+<p>InnerStrokeDashOffset</p>
+</td>
+<td width="480" valign="top">
+<p>Sets the offset to start the dash pattern of inner circle. You can use it to rotate dash pattern.</p>
+</td>
+</tr>
+<tr>
+<td width="144" valign="top">
+<p>InnerStrokeThickness</p>
+</td>
+<td width="480" valign="top">
+<p>Sets the thickness of inner circle border.</p>
+</td>
+</tr>
+<tr>
+<td width="144" valign="top">
+<p>OuterDiameter</p>
+</td>
+<td width="480" valign="top">
+<p>Sets the diameter of the boundary of joystick.</p>
+<p><strong>Default: </strong>100px</p>
+</td>
+</tr>
+<tr>
+<td width="144" valign="top">
+<p>OuterFill</p>
+</td>
+<td width="480" valign="top">
+<p>Color of outer circle. It overrides the respective color set by theme. You can use it to tweak theme style.</p>
+</td>
+</tr>
+<tr>
+<td width="144" valign="top">
+<p>OuterStroke</p>
+</td>
+<td width="480" valign="top">
+<p>Border color of outer circle (joystick boundary). It overrides the respective color set by theme. You can use it to tweak theme style.</p>
+</td>
+</tr>
+<tr>
+<td width="144" valign="top">
+<p>OuterStrokeDashArray</p>
+</td>
+<td width="480" valign="top">
+<p>This property sets the length of stroke and gaps to create dash pattern of outer circle.</p>
+</td>
+</tr>
+<tr>
+<td width="144" valign="top">
+<p>OuterStrokeDashCap</p>
+</td>
+<td width="480" valign="top">
+<p>This property sets the shape of dash edges of outer circle. Default is Flat.</p>
+</td>
+</tr>
+<tr>
+<td width="144" valign="top">
+<p>OuterStrokeDashOffset</p>
+</td>
+<td width="480" valign="top">
+<p>Sets the offset to start the dash pattern of outer circle. You can use it to rotate the dash pattern.</p>
+</td>
+</tr>
+<tr>
+<td width="144" valign="top">
+<p>OuterStrokeThickness</p>
+</td>
+<td width="480" valign="top">
+<p>Sets the thickness of outer circle border.</p>
+</td>
+</tr>
+<tr>
+<td width="154" valign="top">
+<p>Theme</p>
+</td>
+<td width="470" valign="top">
+<p>Sets the theme of Joystick.</p>
+<p><strong>Themes:</strong> AccentTheme, Dark and Light.</p>
+<p><strong>Default:</strong> AccentTheme</p>
+<p><strong>Note: </strong>Theme styles will be overridden in case you set the styling properties (InnerFill, InnerStroke, OuterFill, OuterStroke) explicitly.<strong>
+</strong></p>
+</td>
+</tr>
+<tr>
+<td width="154" valign="top">
+<p>XValue</p>
+</td>
+<td width="470" valign="top">
+<p>Gets the current x-axis value of joystick between -1 to 1. Negative on left side and positive on right.</p>
+</td>
+</tr>
+<tr>
+<td width="154" valign="top">
+<p>YValue</p>
+</td>
+<td width="470" valign="top">
+<p>Gets the current y-axis value of joystick between -1 to 1. Negative on lower side and positive on upper side.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2><strong>Events</strong></h2>
+<table border="1" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td width="144" valign="top">
+<p><strong>Name</strong></p>
+</td>
+<td width="480" valign="top">
+<p><strong>Description</strong></p>
+</td>
+</tr>
+<tr>
+<td width="144" valign="top">
+<p>OnJoystickMoved</p>
+</td>
+<td width="480" valign="top">
+<p>This event is called whenever the joystick is moved.</p>
+</td>
+</tr>
+<tr>
+<td width="144" valign="top">
+<p>OnJoystickPressed</p>
+</td>
+<td width="480" valign="top">
+<p>This event is called whenever the joystick is pressed (tap, touch, mouse click).</p>
+</td>
+</tr>
+<tr>
+<td width="144" valign="top">
+<p>OnJoystickReleased</p>
+</td>
+<td width="480" valign="top">
+<p>This event is called whenever the joystick is released even if the pointer left the joystick boundary while pressed.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h1><strong>How it Works?</strong></h1>
+<p>In a nutshell, Joystick control is simply a UserControl with two &lt;Ellipse&gt; controls, one inside the other. Inner ellipse acts as the controller and outer as the bounding area for joystick. Mouse events are used to perform calculations and translate
+ the joystick control whenever an interaction happens.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>XAML</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">xaml</span>
+<pre class="hidden">    &lt;Grid DataContext=&quot;{Binding ElementName=JoystickControl}&quot;&gt;
+        &lt;Ellipse x:Name=&quot;ControlArea&quot; 
+                 Height=&quot;{Binding OuterDiameter}&quot; 
+                 Width=&quot;{Binding OuterDiameter}&quot;
+                 Fill=&quot;{Binding OuterFill}&quot;
+                 Stroke=&quot;{Binding OuterStroke}&quot;
+                 StrokeThickness=&quot;{Binding OuterStrokeThickness}&quot;
+                 StrokeDashArray=&quot;{Binding OuterStrokeDashArray}&quot;
+                 StrokeDashCap=&quot;{Binding OuterStrokeDashCap}&quot;
+                 StrokeDashOffset=&quot;{Binding OuterStrokeDashOffset}&quot;
+                 /&gt;
+
+        &lt;Ellipse x:Name=&quot;Controller&quot; 
+                 Height=&quot;{Binding InnerDiameter}&quot; 
+                 Width=&quot;{Binding InnerDiameter}&quot;
+                 Fill=&quot;{Binding InnerFill}&quot;
+                 Stroke=&quot;{Binding InnerStroke}&quot;
+                 StrokeThickness=&quot;{Binding InnerStrokeThickness}&quot;
+                 StrokeDashArray=&quot;{Binding InnerStrokeDashArray}&quot;
+                 StrokeDashCap=&quot;{Binding InnerStrokeDashCap}&quot;
+                 StrokeDashOffset=&quot;{Binding InnerStrokeDashOffset}&quot;
+                 PointerPressed=&quot;Controller_PointerPressed&quot;&gt;
+            &lt;Ellipse.RenderTransform&gt;
+                &lt;TranslateTransform x:Name=&quot;JoystickTransform&quot;&gt;&lt;/TranslateTransform&gt;
+            &lt;/Ellipse.RenderTransform&gt;
+        &lt;/Ellipse&gt;
+</pre>
+<div class="preview">
+<pre class="js">&nbsp;&nbsp;&nbsp;&nbsp;&lt;Grid&nbsp;DataContext=<span class="js__string">&quot;{Binding&nbsp;ElementName=JoystickControl}&quot;</span>&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Ellipse&nbsp;x:Name=<span class="js__string">&quot;ControlArea&quot;</span>&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Height=<span class="js__string">&quot;{Binding&nbsp;OuterDiameter}&quot;</span>&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Width=<span class="js__string">&quot;{Binding&nbsp;OuterDiameter}&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fill=<span class="js__string">&quot;{Binding&nbsp;OuterFill}&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Stroke=<span class="js__string">&quot;{Binding&nbsp;OuterStroke}&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;StrokeThickness=<span class="js__string">&quot;{Binding&nbsp;OuterStrokeThickness}&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;StrokeDashArray=<span class="js__string">&quot;{Binding&nbsp;OuterStrokeDashArray}&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;StrokeDashCap=<span class="js__string">&quot;{Binding&nbsp;OuterStrokeDashCap}&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;StrokeDashOffset=<span class="js__string">&quot;{Binding&nbsp;OuterStrokeDashOffset}&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&gt;&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Ellipse&nbsp;x:Name=<span class="js__string">&quot;Controller&quot;</span>&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Height=<span class="js__string">&quot;{Binding&nbsp;InnerDiameter}&quot;</span>&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Width=<span class="js__string">&quot;{Binding&nbsp;InnerDiameter}&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fill=<span class="js__string">&quot;{Binding&nbsp;InnerFill}&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Stroke=<span class="js__string">&quot;{Binding&nbsp;InnerStroke}&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;StrokeThickness=<span class="js__string">&quot;{Binding&nbsp;InnerStrokeThickness}&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;StrokeDashArray=<span class="js__string">&quot;{Binding&nbsp;InnerStrokeDashArray}&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;StrokeDashCap=<span class="js__string">&quot;{Binding&nbsp;InnerStrokeDashCap}&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;StrokeDashOffset=<span class="js__string">&quot;{Binding&nbsp;InnerStrokeDashOffset}&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PointerPressed=<span class="js__string">&quot;Controller_PointerPressed&quot;</span>&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Ellipse.RenderTransform&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;TranslateTransform&nbsp;x:Name=<span class="js__string">&quot;JoystickTransform&quot;</span>&gt;&lt;/TranslateTransform&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Ellipse.RenderTransform&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Ellipse&gt;&nbsp;
+</pre>
+</div>
+</div>
+</div>
+<p>Databinding makes it a lot easier to keep track of changes in joystick size, theme and colors at runtime if you want to create animations.</p>
+
+</div>
+
+
+    </div>
+</body>
+</html>

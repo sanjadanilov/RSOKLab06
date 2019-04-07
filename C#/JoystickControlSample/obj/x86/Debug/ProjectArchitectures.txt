@@ -1,0 +1,1 @@
+c:\users\hassaan\documents\visual studio 2015\Projects\JoystickControlSample\JoystickControlSample\JoystickControlSample.csproj;x86
